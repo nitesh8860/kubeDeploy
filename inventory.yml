@@ -1,0 +1,2 @@
+[kubemaster1]
+10.128.0.4 ansible_user=g886058

@@ -1,0 +1,35 @@
+---
+
+- hosts: all
+  become: yes
+  tasks:
+    - name: install ntpd
+      yum: 
+        name: ntp 
+        state: present 
+    - name: start ntpd
+      service: 
+        name: ntpd
+        state: started 
+    - name: create repo
+      yum_repository:
+        name: virt7-docker-common-release
+        description: virt7-docker-common-release
+        baseurl: http://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
+        gpgcheck: 0
+    - name: install etcd
+      yum :
+        name: etcd
+        enablerepo: virt7-docker-common-release
+        state: installed
+    - name: install docker
+      yum :
+        name: docker
+        enablerepo: virt7-docker-common-release
+        state: installed
+    - name: install kubernetes
+      yum :
+        name: kubernetes
+        enablerepo: virt7-docker-common-release
+        state: installed
+    - name:
