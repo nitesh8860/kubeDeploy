@@ -1,0 +1,2 @@
+KUBE_MASTER=localhost
+KUBE_ETCD=localhost
