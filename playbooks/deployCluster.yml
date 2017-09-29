@@ -1,0 +1,12 @@
+---
+- hosts: all
+  gather_facts: false
+  become: yes
+# install etcd
+  - include: deployEtcd.yml
+# install docker
+  - include: deployDocker.yml 
+# install kube master services
+  - include: deployMaster.yml
+# install kubernetes on the nodes
+  - include: deployNode.yml
