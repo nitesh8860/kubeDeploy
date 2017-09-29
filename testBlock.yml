@@ -1,0 +1,16 @@
+---
+
+- hosts: all
+  become: yes
+  tasks:
+    - debug: 
+        msg: "{{ ansible_hostname[4:10] }}"
+    - name: update a line block in file
+      blockinfile:
+        path: /home/g886058/testblock
+        block: |
+
+          export pswebkeyfile="PSWebkey.enc"
+          export ecckeyfile="ECCkeyfile.enc"
+          export eprimekeyfile="productkeyfile.enc"
+          export eclipsekeyfile="eclipsekeyfile.enc"
