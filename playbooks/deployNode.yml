@@ -3,6 +3,7 @@
   hosts: node
   become: yes
   roles:
+   - common
    - kubernetes
    - node
   tags:

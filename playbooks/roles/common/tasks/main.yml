@@ -5,7 +5,7 @@
     name: ntp
     state: present
   notify: 
-     - start ntpd
+     - started ntd
 - name: create repo
   yum_repository:
     name: "{{YUM_REPO_NAME}}"

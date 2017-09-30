@@ -9,3 +9,10 @@
       - kube-apiserver
       - kube-controller-manager
       - kube-scheduler
+- name: restart kube-apiserver
+  service:
+     name: kube-apiserver
+     state: restarted
+     enabled: yes
+  become: true
+  become_user: root
