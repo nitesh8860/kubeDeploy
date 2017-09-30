@@ -1,0 +1,36 @@
+#ALL
+LISTEN_TO_ALL: 0.0.0.0
+
+# yum repository
+YUM_REPO_NAME: virt7-docker-common-release
+YUM_REPO_BASEURL: http://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
+
+# ETCD Config
+ETCD_CONF_DIR_PATH: /etc/etcd/
+ETCD_CONF: /etc/etcd/etcd.conf
+ETCD_CONF_FILE_NAME: etcd.conf
+ETCD_CONF_BACKUP: /etc/etcd/etcd.conf.backup
+
+ETCD_LISTEN_CLIENT_URL: http://0.0.0.0:2379
+ETCD_ADVERTISE_CLIENT_URL: http://0.0.0.0:2379
+
+# Kubernetes config
+KUBE_CONF_DIR_PATH: /etc/kubernetes/
+KUBE_CONF: /etc/kubernetes/config
+KUBE_CONF_FILE_NAME: config
+KUBE_CONF_BACKUP: /etc/kubernetes/config.backup
+
+KUBE_MASTER_SERVER_IP: 10.128.0.5 
+KUBE_ETCD_SERVER_IP: 10.128.0.5
+
+# api server
+KUBE_APISERVER_FILE_BACKUP: /etc/kubernetes/apiserver.backup
+KUBE_APISERVER: /etc/kubernetes/apiserver
+KUBE_APISERVER_DIR_PATH: /etc/kubernetes/
+KUBE_APISERVER_FILE_NAME: apiserver
+
+# kube node kubelet config
+KUBELET: /etc/kubernetes/kubelet
+KUBELET_DIR_PATH: /etc/kubernetes/
+KUBELET_BACKUP: /etc/kubernetes/kubelet.backup
+KUBELET_FILE_NAME: kubelet

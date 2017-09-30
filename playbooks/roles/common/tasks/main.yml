@@ -8,7 +8,7 @@
      - start ntpd
 - name: create repo
   yum_repository:
-    name: virt7-docker-common-release
+    name: "{{YUM_REPO_NAME}}"
     description: virt7-docker-common-release
-    baseurl: http://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
+    baseurl: "{{YUM_REPO_BASEURL}}"
     gpgcheck: 0

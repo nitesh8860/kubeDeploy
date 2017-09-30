@@ -6,3 +6,4 @@
 
 [node]
 10.128.0.4 ansible_user=g886058
+10.128.0.5 ansible_user=g886058

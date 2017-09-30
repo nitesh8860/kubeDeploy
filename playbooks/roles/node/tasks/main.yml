@@ -2,15 +2,15 @@
 
 - name: Check that the backup exists
   stat:
-     path: /etc/kubernetes/kubelet.backup
+     path: "{{KUBELET_BACKUP}}"
   register: stat_result
 - name: Create the backup, if it doesnt exist already
-  command: mv /etc/kubernetes/kubelet /etc/kubernetes/kubelet.backup
+  command: mv "{{KUBELET}}" "{{KUBELET_BACKUP}}"
   when: stat_result.stat.exists == False
 - name: copy new config
-  copy:
-     src: kubelet
-     dest: /etc/kubernetes/
+  template:
+     src: kubelet.j2
+     dest: "{{KUBELET}}"
      mode: 644
   notify:
      - restart kubernetesNode

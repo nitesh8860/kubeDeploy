@@ -3,7 +3,7 @@
 - name: install docker
   yum :
      name: docker
-     enablerepo: virt7-docker-common-release
+     enablerepo: "{{YUM_REPO_NAME}}"
      state: installed
-     notify: 
+  notify: 
         - restart docker

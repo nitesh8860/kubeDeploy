@@ -1,7 +1,7 @@
 ---
 
 - name: Deploy master
-  hosts: masters
+  hosts: master
   become: yes
   roles:
    - kubernetes

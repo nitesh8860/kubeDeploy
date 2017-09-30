@@ -1,8 +1,8 @@
 - name: restart etcd
-      service:
-        name: "{{ item }}"
-        state: restarted
-        enabled: yes
-      with_items:
+  service:
+      name: "{{ item }}"
+      state: restarted
+      enabled: yes
+  with_items:
            - etcd
           

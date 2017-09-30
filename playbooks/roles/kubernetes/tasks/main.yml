@@ -3,17 +3,17 @@
 - name: install kubernetes
   yum :
      name: kubernetes
-     enablerepo: virt7-docker-common-release
+     enablerepo: "{{YUM_REPO_NAME}}"
      state: installed
 - name: Check that the backup exists
   stat:
-    path: /etc/kubernetes/config.backup
+    path: "{{KUBE_CONF_BACKUP}}"
   register: stat_result
 - name: Create the backup, if it doesnt exist already
-  command: mv /etc/kubernetes/config /etc/kubernetes/config.backup
+  command: mv "{{KUBE_CONF}}" "{{KUBE_CONF_BACKUP}}"
   when: stat_result.stat.exists == False
 - name: copy new config
-  copy:
-     src: config
-     dest: /etc/kubernetes
+  template:
+     src: config.j2
+     dest: "{{KUBE_CONF}}"
      mode: 644

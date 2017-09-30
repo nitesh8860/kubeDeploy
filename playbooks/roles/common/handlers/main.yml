@@ -2,4 +2,4 @@
 - name: start ntpd
   service:
      name: ntpd
-     state: started
+     state: restarted
