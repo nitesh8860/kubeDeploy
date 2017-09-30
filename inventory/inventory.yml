@@ -1,5 +1,8 @@
 [master]
 10.128.0.3 ansible_user=g886058
 
-[minion]
+[etcd]
+10.128.0.3 ansible_user=g886058
+
+[node]
 10.128.0.4 ansible_user=g886058

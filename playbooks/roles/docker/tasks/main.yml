@@ -1,0 +1,9 @@
+---
+
+- name: install docker
+  yum :
+     name: docker
+     enablerepo: virt7-docker-common-release
+     state: installed
+     notify: 
+        - restart docker

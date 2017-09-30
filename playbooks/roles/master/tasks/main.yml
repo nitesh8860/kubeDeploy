@@ -1,0 +1,17 @@
+---
+
+
+- name: Check that the backup exists
+  stat:
+     path: /etc/kubernetes/apiserver.backup
+  register: stat_result
+- name: Create the backup, if it doesnt exist already
+  command: mv /etc/kubernetes/apiserver /etc/kubernetes/apiserver.backup
+  when: stat_result.stat.exists == False
+- name: copy new config
+  copy:
+     src: apiserver
+     dest: /etc/kubernetes/
+     mode: 644
+  notify:
+     - name: restart kubernetesMaster

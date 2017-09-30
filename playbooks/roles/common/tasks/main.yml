@@ -1,0 +1,14 @@
+---
+
+- name: install ntpd
+  yum:
+    name: ntp
+    state: present
+  notify: 
+     - start ntpd
+- name: create repo
+  yum_repository:
+    name: virt7-docker-common-release
+    description: virt7-docker-common-release
+    baseurl: http://cbs.centos.org/repos/virt7-docker-common-release/x86_64/os/
+    gpgcheck: 0

@@ -1,0 +1,21 @@
+---
+
+- name: install etcd
+  yum :
+      name: etcd
+      enablerepo: virt7-docker-common-release
+      state: installed
+- name: Check that the backup exists
+      stat:
+        path: /etc/etcd/etcd.conf.backup
+      register: stat_result
+- name: Create the backup, if it doesnt exist already
+  command: mv /etc/etcd/etcd.conf /etc/etcd/etcd.conf.backup
+  when: stat_result.stat.exists == False
+- name: copy new config
+      copy:
+          src: etcd.conf
+          dest: /etc/etcd/
+          mode: 644
+  notify:
+     - restart etcd

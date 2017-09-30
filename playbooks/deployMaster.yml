@@ -4,6 +4,7 @@
   hosts: masters
   become: yes
   roles:
+   - kubernetes
    - master
   tags:
   - masters
