@@ -20,8 +20,8 @@ KUBE_CONF: /etc/kubernetes/config
 KUBE_CONF_FILE_NAME: config
 KUBE_CONF_BACKUP: /etc/kubernetes/config.backup
 
-KUBE_MASTER_SERVER_IP: 10.128.0.3 
-KUBE_ETCD_SERVER_IP: 10.128.0.3
+#KUBE_MASTER_SERVER_IP: 10.128.0.3 
+#KUBE_ETCD_SERVER_IP: 10.128.0.3
 
 # api server
 KUBE_APISERVER_FILE_BACKUP: /etc/kubernetes/apiserver.backup

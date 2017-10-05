@@ -1,8 +1,15 @@
 [master]
-10.128.0.3 ansible_user=g886058
+10.128.0.3 ansible_user=g886058 ansible_user=g886058
+
+
+[master:vars]
+KUBE_MASTER_SERVER_IP=10.128.0.3 
 
 [etcd]
-10.128.0.3 ansible_user=g886058
+10.128.0.3 ansible_user=g886058 ansible_user=g886058
+
+[etcd:vars]
+KUBE_ETCD_SERVER_IP=10.128.0.3 
 
 [node]
 10.128.0.4 ansible_user=g886058
